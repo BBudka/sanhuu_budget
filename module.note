@@ -47,6 +47,62 @@ IIFE
 //  зарим өгөгдөл функцуудийг бусад модулиудад хуваалцахаар өгдөг
 __________________________________________________________________________________________
 62
+/* ** */
+// Дэлгэцийн модуль
+var UIController = (function () {
+  var x = 233;
+
+  function add(y){
+    return x+y;
+  }
+  return {
+    publicAdd: function(a){
+      a = add(a);
+      console.log("хүлээн авсан утга : " + a);
+    }
+  };
+})();
+
+/* ** */
+// BUDGET CONTROLLER MODULE
+var budgetController = (function () {
+  console.log("");
+})();
+
+/* ** */
+// suppoert module
+var appController = (function (UIController, budgetController) {
+  UIController.publicAdd(467)
+})(UIController, budgetController);
 
 
+var hunController = (function(){
+
+  
+  // private Data
+  var bodol = "Javascript толгой эргүүлмээр юм...";
+  function tsusGuih(){
+    // private function
+
+    function huchilturugch(){}
+  }
+
+  return {
+    yarih: function(){
+      bodol = "Javascript бол лаг";
+      huchilturugch();
+      tsusGuih();
+      console.log("Hello world");
+    }
+  }
+})();
+
+hunController.yarih();
+
+
+__________________________________________________________________________________________
+
+63.
+
+keycodes.atjayjo
 
